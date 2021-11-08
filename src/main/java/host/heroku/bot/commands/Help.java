@@ -16,7 +16,8 @@ public class Help implements MessageCreateListener {
 
             new MessageBuilder()
                     .setEmbed(new EmbedBuilder()
-                            .setDescription("These are the commands for NPM: " + "\n 'npm help' to open the help page"+ "\n 'npm info' for information about the system "
+                            .setTitle("NPM commands list")
+                            .setDescription("\n 'npm help' to open the help page"+ "\n 'npm info' for information about the system "
                                     + "\n 'npm run' to run the typing game")
                             .setColor(Color.BLUE))
                     .send(helpMenu.getChannel());        }
