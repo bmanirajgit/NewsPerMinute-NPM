@@ -11,7 +11,7 @@ import java.awt.*;
 public class Info implements MessageCreateListener {
     @Override
     public void onMessageCreate(MessageCreateEvent info) {
-        if(info.getMessageContent().equalsIgnoreCase("npm info")) {
+        if(info.getMessageContent().equalsIgnoreCase("info")) {
             new MessageBuilder()
                     .setEmbed(new EmbedBuilder()
                             .setDescription("This is bot meant for both fun & learning, " +
