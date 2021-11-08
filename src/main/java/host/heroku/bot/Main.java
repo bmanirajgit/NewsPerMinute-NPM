@@ -1,6 +1,7 @@
 package host.heroku.bot;
 
 import host.heroku.bot.commands.Ping;
+import host.heroku.bot.commands.Help;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 
@@ -16,6 +17,8 @@ public class Main {
         Bot.addListener(new Ping());
 
         System.out.println("We are hosted");
+
+        Bot.addListener(new Help());
     }
 
 
