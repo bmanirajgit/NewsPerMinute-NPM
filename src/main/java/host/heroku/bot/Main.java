@@ -15,10 +15,10 @@ public class Main {
                 .login().join();
 
         Bot.addListener(new Ping());
-
+        Bot.addListener(new Help());
         System.out.println("We are hosted");
 
-        Bot.addListener(new Help());
+
     }
 
 
