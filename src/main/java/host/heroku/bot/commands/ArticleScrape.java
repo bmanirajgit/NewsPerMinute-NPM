@@ -22,6 +22,7 @@ import java.awt.*;
 public class ArticleScrape {
     private String article;
     private String link;
+    private String articleText;
 
     public String getText(String link){
         /* This is just here to obtain all of the text from the article
