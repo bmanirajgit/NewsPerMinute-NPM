@@ -27,6 +27,7 @@ public class ArticleScrape {
     public String getText(String link){
         /* This is just here to obtain all of the text from the article
          * using whatever scraping library, doesn't get the excerpt yet */
+        /*should add another function for scrapper*/
         return "getText";
     }
 
