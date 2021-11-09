@@ -30,10 +30,10 @@ public class ArticleScrape {
         Document document = Jsoup.connect(url1).get();
         Elements allLinks = document.select("a[href]");
         for(Element link: allLinks) {
-                String relativeUrl = link.attr("href");
+                
                 String absoluteUrl = link.attr("abs:href");
 
-                System.out.println("Relative URL: " + relativeUrl);
+                
                 System.out.println("Absolute URL: " + absoluteUrl);
         }
             
