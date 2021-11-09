@@ -11,7 +11,7 @@ public class Ping implements MessageCreateListener {
 
         if (message.getMessageContent().equalsIgnoreCase(Main.Prefix + "Ping")){
 
-            message.getChannel().sendMessage("Pong Pong");
+            message.getChannel().sendMessage("Pong Hello");
         }
     }
 }
