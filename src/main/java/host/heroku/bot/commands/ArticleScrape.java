@@ -12,17 +12,41 @@ import org.javacord.api.entity.message.MessageBuilder;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.entity.user.User;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.IOException;
 import java.awt.*;
 public class ArticleScrape {
     private String article;
     private String link;
+    private String articleText;
+    public ArticleScrape() throws IOException{
+        String url1 = "https://apnews.com/";
+        String url2 = "https://www.nbcnews.com/?icid=nav_bar_logo";
+        try {
+        Document document = Jsoup.connect(url1).get();
+        Elements allLinks = document.select("a[href]");
+        for(Element link: allLinks) {
+                
+                String absoluteUrl = link.attr("abs:href");
 
+                
+                System.out.println("Absolute URL: " + absoluteUrl);
+        }
+            
+         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public String getText(String link){
         /* This is just here to obtain all of the text from the article
          * using whatever scraping library, doesn't get the excerpt yet */
+        /*should add another function for scrapper*/
         return "getText";
     }
-
     public String getArticle(){
         return this.article;
     }
