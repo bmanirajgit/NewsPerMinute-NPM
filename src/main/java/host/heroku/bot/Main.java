@@ -8,13 +8,16 @@ import org.javacord.api.DiscordApiBuilder;
 
 public class Main {
 
+    //prefix
     public static String Prefix = "npm ";
     public static void main(String[] args){
 
+        //makes out top secret token an environment variable....shhhh
         DiscordApi Bot = new DiscordApiBuilder()
                 .setToken(System.getenv().get("TOKEN"))
                 .login().join();
 
+        //class listeners
         Bot.addListener(new Ping());
         Bot.addListener(new Help());
         Bot.addListener(new Info());
