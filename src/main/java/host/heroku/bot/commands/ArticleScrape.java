@@ -24,8 +24,8 @@ public class ArticleScrape {
     private String link;
     private String articleText;
     public ArticleScrape() throws IOException{
-        String url1 = "https://apnews.com/"
-        String url2 = "https://www.nbcnews.com/?icid=nav_bar_logo"
+        String url1 = "https://apnews.com/";
+        String url2 = "https://www.nbcnews.com/?icid=nav_bar_logo";
         try {
         Document document = Jsoup.connect(url1).get();
         Elements allLinks = document.select("a[href]");
