@@ -10,8 +10,8 @@ public class Ping implements MessageCreateListener {
     public void onMessageCreate(MessageCreateEvent message) {
 
         if (message.getMessageContent().equalsIgnoreCase(Main.Prefix + "Ping")){
-
-            message.getChannel().sendMessage("Pong Pong");
+            ArticleScrape scrap = new ArticleScrape();
+            message.getChannel().sendMessage("Pong Hello2");
         }
     }
 }
