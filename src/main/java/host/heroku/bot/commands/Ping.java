@@ -3,7 +3,7 @@ package host.heroku.bot.commands;
 import host.heroku.bot.Main;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
-import java.io.IOException;
+
 
 public class Ping implements MessageCreateListener {
 
@@ -12,13 +12,6 @@ public class Ping implements MessageCreateListener {
 
         if (message.getMessageContent().equalsIgnoreCase(Main.Prefix + "Ping")){
             ArticleScrape scrap = new ArticleScrape();
-             try{
-                      System.out.println("Processing...");
-                }
-                 catch (IOException ioe) {
-                       System.out.println("Exception!!!");
-                        ioe.printStackTrace();
-                 }
             message.getChannel().sendMessage("Pong Hello2");
         }
     }
