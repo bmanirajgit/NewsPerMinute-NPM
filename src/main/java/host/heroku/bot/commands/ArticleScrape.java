@@ -27,6 +27,7 @@ public class ArticleScrape {
         this.article = "";
         this.link = "":
         this.articleText = "";
+        System.out.println("This is hell");
     }
     public String getText(String link){
         /* This is just here to obtain all of the text from the article
