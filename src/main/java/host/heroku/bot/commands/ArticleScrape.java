@@ -25,7 +25,7 @@ public class ArticleScrape {
     private String articleText;
     public ArticleScrape() {
         this.article = "";
-        this.link = "":
+        this.link = "";
         this.articleText = "";
         System.out.println("This is hell");
     }
