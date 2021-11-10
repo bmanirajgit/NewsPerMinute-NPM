@@ -26,10 +26,10 @@ public class ArticleScrape {
     public ArticleScrape() throws IOException{
         String url1 = "https://apnews.com/";
         String url2 = "https://www.nbcnews.com/?icid=nav_bar_logo";
+        System.out.println("This is hell");
         try {
         Document document = Jsoup.connect(url1).get();
         Elements allLinks = document.select("a[href]");
-        System.our.println("\nHELLO WORld");
           
         for(Element link: allLinks) {
                 
