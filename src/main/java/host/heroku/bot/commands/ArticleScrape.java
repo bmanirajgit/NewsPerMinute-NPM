@@ -36,7 +36,7 @@ public class ArticleScrape {
         /*should add another function for scrapper*/
         return "getText";
     }
-    public String getArticle(){
+    public void readyArticle() {
         String url1 = "https://apnews.com/";
         String url2 = "https://www.nbcnews.com/?icid=nav_bar_logo";
         System.out.println("This is hell");
@@ -54,6 +54,10 @@ public class ArticleScrape {
          } catch (IOException e) {
             e.printStackTrace();
         }
+        
+    }
+    public String getArticle(){
+        
         return this.article;
     }
 
