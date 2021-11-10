@@ -23,7 +23,18 @@ public class ArticleScrape {
     private String article;
     private String link;
     private String articleText;
-    public ArticleScrape() throws IOException{
+    public ArticleScrape() {
+        this.article = "";
+        this.link = "":
+        this.articleText = "";
+    }
+    public String getText(String link){
+        /* This is just here to obtain all of the text from the article
+         * using whatever scraping library, doesn't get the excerpt yet */
+        /*should add another function for scrapper*/
+        return "getText";
+    }
+    public String getArticle(){
         String url1 = "https://apnews.com/";
         String url2 = "https://www.nbcnews.com/?icid=nav_bar_logo";
         System.out.println("This is hell");
@@ -42,14 +53,6 @@ public class ArticleScrape {
          } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-    public String getText(String link){
-        /* This is just here to obtain all of the text from the article
-         * using whatever scraping library, doesn't get the excerpt yet */
-        /*should add another function for scrapper*/
-        return "getText";
-    }
-    public String getArticle(){
         return this.article;
     }
 
