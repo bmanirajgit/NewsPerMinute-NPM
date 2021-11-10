@@ -46,8 +46,7 @@ public class ArticleScrape {
         for(Element link: allLinks) {
                 
                 String absoluteUrl = link.attr("abs:href");
-                
-                
+                message.getChannel().sendMessage("Absolute URL: " + absoluteUrl);
                 System.out.println("Absolute URL: " + absoluteUrl);
         }
             
