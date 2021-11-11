@@ -55,7 +55,8 @@ public class ArticleScrape {
         System.out.println("This is hell");
         try {
         /*This chooses the article based on the random number generated*/
-        switch (random){
+            /*We are sticking with the first article now just so we can work on extracting a passage*/
+        switch (1){
             case 1: setArticle(url1);
                     break;
             case 2: setArticle(url2);
@@ -68,13 +69,28 @@ public class ArticleScrape {
                     break;
         }
         Document document = Jsoup.connect(getArticle()).get();
-        Elements allLinks = document.select(<i>"a[href]"<i>); //what does this part do??? DOES THIS GET ALL THE LINKS IN THE LANDING PAGE 
-            //IF SO WE COULD LOOK AT THE TIME AND CHOOSE THE MOSt recent one :) THEN we can get set the link, find the summary 
-            // set the summary and have our final thingy to present 
+		Elements allLinks = null;
+            
+		switch (1){
+			//where does apnews keep their articles
+			case 1:
+				allLinks = document.select("a[href*=article]");
+				break;
+		    //where does nbc news keep their articles
+		    case 2:
+				break;
+			//where does wsj news lkeep their articles
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+
+		}
             
         for(Element link: allLinks) {
-                String absoluteUrl = link.attr("abs:href"); //DOES THIS GET ALL THE LINKS ON THE LANDING PAGE
-                 
+                String absoluteUrl = link.attr("abs:href"); //DOES THIS GET ALL THE LINKS ON THE LANDING PAGE 
                 System.out.println("Absolute URL: " + absoluteUrl);
         }
             
