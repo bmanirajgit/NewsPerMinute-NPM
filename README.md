@@ -1,2 +1,2 @@
-# herokutestrepo
-This test the heroku application
+# News per Minute
+
