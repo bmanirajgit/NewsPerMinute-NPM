@@ -55,7 +55,7 @@ public class ArticleScrape {
         System.out.println("This is hell");
         try {
         /*This chooses the article based on the random number generated*/
-        Switch (random){
+        switch (random){
             case 1: setArticle(url1);
                     break;
             case 2: setArticle(url2);
