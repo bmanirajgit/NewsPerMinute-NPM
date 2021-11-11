@@ -68,12 +68,13 @@ public class ArticleScrape {
                     break;
         }
         Document document = Jsoup.connect(getArticle()).get();
-        Elements allLinks = document.select("a[href]"); //what does this part do??? DOES THIS GET ALL THE LINKS IN THE LANDING PAGE 
+        Elements allLinks = document.select(<i>"a[href]"<i>); //what does this part do??? DOES THIS GET ALL THE LINKS IN THE LANDING PAGE 
             //IF SO WE COULD LOOK AT THE TIME AND CHOOSE THE MOSt recent one :) THEN we can get set the link, find the summary 
             // set the summary and have our final thingy to present 
             
         for(Element link: allLinks) {
-                String absoluteUrl = link.attr("abs:href"); //DOES THIS GET ALL THE LINKS ON THE LANDING PAGE 
+                String absoluteUrl = link.attr("abs:href"); //DOES THIS GET ALL THE LINKS ON THE LANDING PAGE
+                 
                 System.out.println("Absolute URL: " + absoluteUrl);
         }
             
