@@ -48,10 +48,10 @@ public class ArticleScrape {
         String url3 = "https://www.wsj.com/";
         String url4 = "https://www.reuters.com/";
         String url5 = "https://www.bbc.com/";
-        int rand = new Random();
+        Random rand = new Random();
         int max = 5;
         int min = 4;
-        int random = rand.nextInt((max-min)+1)+ min);
+        int random = rand.nextInt((max-min)+1)+ min;
         System.out.println("This is hell");
         try {
         /*This chooses the article based on the random number generated*/
