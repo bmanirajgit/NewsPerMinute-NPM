@@ -68,7 +68,7 @@ public class ArticleScrape {
 		String summary = "";
 		String url1 = "https://apnews.com/"; //a href
 		String url2 = "https://www.nbcnews.com/us-news";
-		String url3 = "https://www.wsj.com/news/us?mod=nav_left_section";
+		String url3 = "https://www.wsj.com/";
 		String url4 = "https://www.reuters.com/breakingviews";
 		String url5 = "https://www.bbc.com/news";
 		Random rand = new Random();
