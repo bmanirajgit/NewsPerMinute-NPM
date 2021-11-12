@@ -39,12 +39,12 @@ public class Race implements MessageCreateListener {
                     .append("React with a thumbs up to begin, 3 needed for a game!")
                     .send(race.getChannel());
 
-            new MessageBuilder()
+            /*new MessageBuilder()
                     .append("Go! Retype this paragraph: \n")
                     .setEmbed(new EmbedBuilder()
                             .setDescription(statictest)
                             .setColor(Color.BLUE))
-                    .send(race.getChannel());
+                    .send(race.getChannel());*/
 
 
 
