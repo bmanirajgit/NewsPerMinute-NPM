@@ -32,7 +32,8 @@ public class Race implements MessageCreateListener {
                 "like fabulous yellow Roman candles exploding like spiders across the stars, " +
                 "and in the middle, you see the blue center-light pop, and everybody goes ahh...";
         int staticlength = statictest.length();
-
+        ArticleScrape scraper = new ArticleScrape();
+        String summary = scraper.getText();
         if (race.getMessageContent().equalsIgnoreCase(Main.Prefix + "Race")){
 
             new MessageBuilder()
@@ -48,7 +49,7 @@ public class Race implements MessageCreateListener {
                     .append("Go! Retype this paragraph: \n")
                     .append("channel ID is: " + String.valueOf(a))
                     .setEmbed(new EmbedBuilder()
-                            .setDescription(statictest)
+                            .setDescription(summary)
                             .setColor(Color.GREEN))
                     .send(race.getChannel());
 
