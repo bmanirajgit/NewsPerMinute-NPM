@@ -119,6 +119,13 @@ public class CalculateStats {
                         output += ("~~"+inputWord[j]+"~~" + "**(" + excerptWord[j] + ")**");
                     }
                 }
+                if(excerptBySpace[i].length() < inputBySpace[i].length()) {
+                    output += "~~**";
+                    for(int lastIndex = excerptBySpace[i].length(); lastIndex < inputBySpace[i].length(); lastIndex++){
+                        output += (inputWord[lastIndex]);
+                    }
+                    output += "**~~";
+                }
             }
             output += " ";
             System.out.println("output: " + output);
