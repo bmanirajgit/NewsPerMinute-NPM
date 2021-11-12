@@ -43,6 +43,7 @@ public class Race implements MessageCreateListener {
                     .send(race.getChannel());
 
 
+
             new MessageBuilder()
                     .append("Go! Retype this paragraph: \n")
                     .setEmbed(new EmbedBuilder()

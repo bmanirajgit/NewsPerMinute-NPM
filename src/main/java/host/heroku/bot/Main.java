@@ -1,9 +1,6 @@
 package host.heroku.bot;
 
-import host.heroku.bot.commands.Ping;
-import host.heroku.bot.commands.Race;
-import host.heroku.bot.commands.Help;
-import host.heroku.bot.commands.Info;
+import host.heroku.bot.commands.*;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 
@@ -23,6 +20,8 @@ public class Main {
         Bot.addListener(new Help());
         Bot.addListener(new Info());
         Bot.addListener(new Race());
+        Bot.addListener(new TextToGraphics());
+
 
 
         System.out.println("We are hosted");
