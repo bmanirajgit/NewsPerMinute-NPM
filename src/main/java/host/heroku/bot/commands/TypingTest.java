@@ -50,8 +50,8 @@ public class TypingTest implements MessageCreateListener {
             System.out.println(ma);
             DiscordApi testApi = this.getTTApi();
             testApi.addMessageCreateListener(input -> {
-                if (test.getMessageAuthor().equals(ma)) {
-                    String input2 = test.getMessageContent();
+                if (input.getMessageAuthor().equals(ma)) {
+                    String input2 = input.getMessageContent();
                     double stop = System.currentTimeMillis();
                     double time = (stop - start) / 1000;
                     double accuracy = CalculateStats.calculateAccuracy(input2, statictest);
@@ -66,10 +66,10 @@ public class TypingTest implements MessageCreateListener {
                                             "Your paragraph was " + accuracy + "% accurate")
                                     .setColor(Color.green))
 
-                            .send(test.getChannel());
+                            .send(input.getChannel());
                     new MessageBuilder()
                             .append("Errors: \n" + errors)
-                            .send(test.getChannel());
+                            .send(input.getChannel());
                 }
             });
         }
