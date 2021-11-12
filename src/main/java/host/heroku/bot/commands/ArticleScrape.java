@@ -31,8 +31,7 @@ public class ArticleScrape {
 		this.link = "placeholder";
 		this.articleText = "placeholder";
 	}
-	
-	/*This is method fetches the summary/ a paragraph of the article*/
+	/*this method feteches a passage*/
 	public String getText( ){
 		/* This is just here to obtain all of the text from the article
 		 * using whatever scraping library, doesn't get the excerpt yet */
@@ -40,11 +39,14 @@ public class ArticleScrape {
 		String text = "";
 
 		text = getDocument().select(".Article").select("p").text();
+		if (getLink().contains("wsj")){
+			text = getDocument().select(".wsj-snippet-body").select("p").text();
+		}
 		String[] summary = text.split("\\s+");
 		String[] temp = new String[summary.length];
 		StringBuffer sum = new StringBuffer();
 		int j = 0;
-		while ( j < 60){
+		while ( j < summary.length || j < 60){
 			temp[j] = summary[j];
 			j++;
 		}
@@ -52,8 +54,10 @@ public class ArticleScrape {
 			sum.append(temp[i]+" ");
 		}
 		text = sum.toString();
-		return text;
+		this.articleText = text;
+		return this.articleText;
 	}
+	
 	/* For each article or Scrapper should obtain the following:
 	 * 1. Title
 	 * 2. Summary
@@ -99,6 +103,7 @@ public class ArticleScrape {
 					break;
 					//where does wsj news lkeep their articles
 				case 3:
+					allLinks = getDocument().select("a[href*=article]");
 					break;
 				case 4:
 					break;
@@ -122,7 +127,9 @@ public class ArticleScrape {
 			title = getDocument().title();
 			summary = getText();
 			System.out.println(title+"\n"+summary+"\n"+getLink());
+			this.article = title;
 			this.articleText = summary;
+			this.link = getLink();
 			
 
 		} catch (Exception e) {
