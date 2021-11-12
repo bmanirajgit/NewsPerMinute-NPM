@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.util.Random;
 
 import java.awt.*;
-public class ArticleScrape {
+public class ArticleScrape{
 	private String article;
 	private String link;
 	private String title;
@@ -41,19 +41,23 @@ public class ArticleScrape {
 	public void setArticleText(Document document){
 		String text = "";
 
-		text = getDocument().select(".Article").select("p").text();
 		if (getLink().contains("wsj")){
 			text = getDocument().select(".wsj-snippet-body").select("p").text();
+		} else {
+			text = getDocument().select(".Article").select("p").text();
 		}
 		String[] summary = text.split("\\s+");
 		String[] temp = new String[summary.length];
 		StringBuffer sum = new StringBuffer();
 		int j = 0;
-		while ( j < summary.length || j < 60){
+		while ( j < temp.length && j < 60){
 			temp[j] = summary[j];
 			j++;
 		}
-		for(int i = 0; i < 60; i++) {
+		for(int i = 0; i < temp.length; i++) {
+			if ( i >= 60){
+				break;
+			}
 			sum.append(temp[i]+" ");
 		}
 		text = sum.toString();
@@ -93,20 +97,22 @@ public class ArticleScrape {
 			}
 			setDocument(getArticle());
 			Elements allLinks = null;
+			int size = 0;
 			switch (random){
-				//where does apnews keep their articles
+				//where does apnews & wsj keep their articles
 				case 1:
+				case 3:
 					allLinks = getDocument().select("a[href*=article]");
+					size = allLinks.size();
 					break;
 					//where does nbc news keep their articles
 				case 2:
 					allLinks = getDocument().select("a[href*=news/us-news]");
+					size = allLinks.size();
 					break;
 					//where does wsj news lkeep their articles
-				case 3:
-					allLinks = getDocument().select("a[href*=article]");
-					break;
 				case 4:
+					allLinks = getDocument().select("a[href*=americas]");
 					break;
 				case 5:
 					break;
@@ -116,14 +122,28 @@ public class ArticleScrape {
 			//IF SO WE COULD LOOK AT THE TIME AND CHOOSE THE MOSt recent one :) THEN we can get set the link, find the summary
 			// set the summary and have our final thingy to present
 			String absoluteUrl = "";
-
+			int newMax = 0;
+			int newMin = 1;
+			for (int z = 0; z < size; z++){
+				newMax++;
+			}
+			if ( size != 0) {
+				random = rand.nextInt((newMax - newMin) + 1) + newMax;
+			} else {
+				random = 0;
+			}
+			int k = 0;
 			for (Element link : allLinks) {
 				//System.out.println("Ypp");
 				absoluteUrl = link.attr("abs:href"); //DOES THIS GET ALL THE LINKS ON THE LANDING PAGE
-				System.out.println("Absolute URL: " + absoluteUrl);//print out all links obtained
-				//break;
-
+				//System.out.println("Absolute URL: " + absoluteUrl);//print out all links obtained
+				if (k == random ) {
+					break;
+				}
+				k++;
+					//break;
 			}
+
 			//Step 1 set link of article
 			setLink(absoluteUrl);
 			setArticle(absoluteUrl);
@@ -145,11 +165,12 @@ public class ArticleScrape {
 	public String getArticle(){
 		return this.article;
 	}
-
+	
 	/*Sets article*/
 	public void setArticle(String article){
 		this.article = article;
 	}
+	
 	/*Sets document*/
 	public void setDocument(String article){
 		try {
@@ -158,18 +179,20 @@ public class ArticleScrape {
 			e.printStackTrace();
 		}
 	}
+	
 	/*return document*/
-	public Document getDocument() {
-		return this.document;
-	}
+	public Document getDocument() { return this.document; }
+	
 	/*sets article title*/
 	public void setTitle(Document document){
 		this.title = document.title();
 	}
+	
 	/*gets articles title*/
 	public String getTitle(){
 		return this.title;
 	}
+	
 	/*gets link of article*/
 	public String getLink(){
 		return this.link;
