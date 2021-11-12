@@ -28,13 +28,13 @@ public class TypingTest implements MessageCreateListener {
             "like fabulous yellow Roman candles exploding like spiders across the stars, " +
             "and in the middle, you see the blue center-light pop, and everybody goes ahh...";
     int staticLength = statictest.length();
-    private DiscordApi api;
+    /*private DiscordApi api;
     public TypingTest(DiscordApi api){
         this.api = api;
     }
     public DiscordApi getTTApi(){
         return this.api;
-    }
+    }*/
     @Override
     public void onMessageCreate(MessageCreateEvent test) {
         if (test.getMessageContent().equalsIgnoreCase(Main.Prefix + "test")){
@@ -48,7 +48,7 @@ public class TypingTest implements MessageCreateListener {
             double start = System.currentTimeMillis();
             MessageAuthor ma = test.getMessageAuthor();
             System.out.println(ma);
-            DiscordApi testApi = this.getTTApi();
+            /*DiscordApi testApi = this.getTTApi();
             testApi.addMessageCreateListener(input -> {
                 if (input.getMessageAuthor().equals(ma)) {
                     String input2 = input.getMessageContent();
@@ -71,7 +71,7 @@ public class TypingTest implements MessageCreateListener {
                             .append("Errors: \n" + errors)
                             .send(input.getChannel());
                 }
-            });
+            });*/
         }
     }
     private String input = "";
