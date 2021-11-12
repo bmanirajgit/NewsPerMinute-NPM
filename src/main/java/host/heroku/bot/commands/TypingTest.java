@@ -39,6 +39,9 @@ public class TypingTest implements MessageCreateListener {
     @Override
     public void onMessageCreate(MessageCreateEvent test) {
         if (test.getMessageContent().equalsIgnoreCase(Main.Prefix + "test")){
+            ArticleScrape scraper = new ArticleScrape();
+            String summary = scraper.getText();
+            int sumLength = summary.length();
             test.getChannel().sendMessage("Test started");
             new MessageBuilder()
                     .append("Go! Retype this paragraph: \n")
