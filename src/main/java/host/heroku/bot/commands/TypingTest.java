@@ -1,7 +1,6 @@
 package host.heroku.bot.commands;
 
 import java.util.*;
-import host.heroku.bot.commands.;
 import host.heroku.bot.Main;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
