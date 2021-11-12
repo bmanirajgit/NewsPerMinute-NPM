@@ -46,7 +46,7 @@ public class TypingTest implements MessageCreateListener {
             new MessageBuilder()
                     .append("Go! Retype this paragraph: \n")
                     .setEmbed(new EmbedBuilder()
-                            .setDescription(statictest)
+                            .setDescription(summary)
                             .setColor(Color.BLUE))
                     .send(test.getChannel());
             double start = System.currentTimeMillis();
@@ -58,9 +58,9 @@ public class TypingTest implements MessageCreateListener {
                     String input2 = input.getMessageContent();
                     double stop = System.currentTimeMillis();
                     double time = (stop - start) / 1000;
-                    double accuracy = CalculateStats.calculateAccuracy(input2, statictest);
-                    double wpm = CalculateStats.calculateWPM(staticLength, time);
-                    String errors = CalculateStats.showErrors(statictest, input2);
+                    double accuracy = CalculateStats.calculateAccuracy(input2, summary);
+                    double wpm = CalculateStats.calculateWPM(sumLength, time);
+                    String errors = CalculateStats.showErrors(summary, input2);
                     new MessageBuilder()
                             .append("You sent: \n")
                             .append(input2 + "\n")
