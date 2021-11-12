@@ -36,15 +36,18 @@ public class Race implements MessageCreateListener {
         if (race.getMessageContent().equalsIgnoreCase(Main.Prefix + "Race")){
 
             new MessageBuilder()
-                    .append("React with a thumbs up to begin, 3 needed for a game!")
+                    //.append("React with a thumbs up to begin, 3 needed for a game!")
+                    .setEmbed(new EmbedBuilder()
+                            .setDescription("React with a thumbs up to begin, 3 needed for a game!")
+                            .setColor(Color.RED))
                     .send(race.getChannel());
 
-            /*new MessageBuilder()
+            new MessageBuilder()
                     .append("Go! Retype this paragraph: \n")
                     .setEmbed(new EmbedBuilder()
                             .setDescription(statictest)
-                            .setColor(Color.BLUE))
-                    .send(race.getChannel());*/
+                            .setColor(Color.GREEN))
+                    .send(race.getChannel());
 
 
 
