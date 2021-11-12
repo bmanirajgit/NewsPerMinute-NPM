@@ -15,11 +15,19 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+import host.heroku.bot.Main;
+
+
+import java.awt.*;
+
+
 public class TextToGraphics implements MessageCreateListener {
     @Override
-    public void onMessageCreate(MessageCreateEvent txtg) {
-        if(txtg.getMessageContent().equalsIgnoreCase("text")) {
-            ///
+    public void onMessageCreate(MessageCreateEvent textg) {
+        if (textg.getMessageContent().equalsIgnoreCase(Main.Prefix + "text")){
+
+
+            ///////
             String text = "Hello";
 
         /*
@@ -56,12 +64,12 @@ public class TextToGraphics implements MessageCreateListener {
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
-            ///
+            //////////
+
             new MessageBuilder()
                     .setEmbed(new EmbedBuilder()
                             .setImage("Text.png")
                             .setColor(Color.BLUE))
-                    .send(txtg.getChannel());
-        }
+                    .send(textg.getChannel());       }
     }
 }
