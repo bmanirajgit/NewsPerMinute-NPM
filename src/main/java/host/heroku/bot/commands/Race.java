@@ -43,7 +43,7 @@ public class Race implements MessageCreateListener {
                     .send(race.getChannel());
 
 
-            long a = race.getChannel().getId()
+            long a = race.getChannel().getId();
             new MessageBuilder()
                     .append("Go! Retype this paragraph: \n")
                     .append("channel ID is: " + String.valueOf(a))
