@@ -50,7 +50,7 @@ public class TypingTest implements MessageCreateListener {
             MessageAuthor ma = test.getMessageAuthor();
             System.out.println(ma);
             DiscordApi testApi = this.getTTApi();
-            ListenerManager<MessageCreateListener> listenerManager = testApi.addMessageCreateListener(input -> {
+            testApi.addMessageCreateListener(input -> {
                 if (input.getMessageAuthor().equals(ma)) {
                     String input2 = input.getMessageContent();
                     double stop = System.currentTimeMillis();
@@ -73,7 +73,6 @@ public class TypingTest implements MessageCreateListener {
                             .send(input.getChannel());
                 }
             });
-            listenerManager.remove();
         }
     }
     private String input = "";
