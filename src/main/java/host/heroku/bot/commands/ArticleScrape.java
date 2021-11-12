@@ -169,4 +169,9 @@ public class ArticleScrape {
 	public void setLink(String link){
 		this.link = link;
 	}
+	
+	public String getArticleText(){
+		return this.articleText;
+	}
+
 }
