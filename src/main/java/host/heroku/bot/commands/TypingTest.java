@@ -16,6 +16,7 @@ import org.javacord.api.entity.server.Server;
 import org.javacord.api.entity.user.User;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
+import org.javacord.api.util.event.ListenerManager;
 
 import java.awt.*;
 import java.util.concurrent.CompletableFuture;
@@ -49,7 +50,7 @@ public class TypingTest implements MessageCreateListener {
             MessageAuthor ma = test.getMessageAuthor();
             System.out.println(ma);
             DiscordApi testApi = this.getTTApi();
-            testApi.addMessageCreateListener(input -> {
+            ListenerManager<MessageCreateListener> listenerManager = testApi.addMessageCreateListener(input -> {
                 if (input.getMessageAuthor().equals(ma)) {
                     String input2 = input.getMessageContent();
                     double stop = System.currentTimeMillis();
@@ -72,6 +73,7 @@ public class TypingTest implements MessageCreateListener {
                             .send(input.getChannel());
                 }
             });
+            listenerManager.remove();
         }
     }
     private String input = "";
