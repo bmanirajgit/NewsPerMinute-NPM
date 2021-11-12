@@ -16,18 +16,16 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class TextToGraphics implements MessageCreateListener {
-
-    public void onMessageCreate(MessageCreateEvent txtGraph) {
-
-        if(txtGraph.getMessageContent().equalsIgnoreCase("textG")) {
+    @Override
+    public void onMessageCreate(MessageCreateEvent text) {
+        if(text.getMessageContent().equalsIgnoreCase("text")) {
             new MessageBuilder()
                     .setEmbed(new EmbedBuilder()
-                            .setImage("Text.png" +
+                            .setDescription("This is bot meant for both fun & learning, " +
                                     "as it will help with both your typing skills and allow you to keep up with current events. " +
                                     "If you wish to know about all of the commands please use the 'npm help' command.")
-                            .setColor(Color.GREEN))
-                    .send(txtGraph.getChannel());
+                            .setColor(Color.BLUE))
+                    .send(text.getChannel());
         }
     }
-
 }
