@@ -16,7 +16,7 @@ public class Ping implements MessageCreateListener {
             message.getChannel().sendMessage(scrap.getLink());
             message.getChannel().sendMessage("Pong Hello3");
             message.getChannel().sendMessage(scrap.getText());
-           ArticleScrape scrap = new ArticleScrape();
+           scrap = new ArticleScrape();
           
         }
     }
