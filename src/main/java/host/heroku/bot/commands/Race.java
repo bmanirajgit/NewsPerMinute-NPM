@@ -43,6 +43,8 @@ public class Race implements MessageCreateListener {
                     .send(race.getChannel());
 
 
+
+
         }
 
 
