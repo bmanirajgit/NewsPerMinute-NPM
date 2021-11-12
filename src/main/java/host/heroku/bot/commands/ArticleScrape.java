@@ -73,13 +73,13 @@ public class ArticleScrape {
 		String url4 = "https://www.reuters.com/world/";
 		String url5 = "https://www.bbc.com/news";
 		Random rand = new Random();
-		int max = 5;
+		int max = 3;
 		int min = 1;
 		int random = rand.nextInt((max-min)+1)+ min;
 		//System.out.println(random);
 		try {
 			/*This chooses the article based on the random number generated*/
-			switch (3){
+			switch (random){
 				case 1: setArticle(url1);
 					break;
 				case 2: setArticle(url2);
@@ -93,7 +93,7 @@ public class ArticleScrape {
 			}
 			setDocument(getArticle());
 			Elements allLinks = null;
-			switch (3){
+			switch (random){
 				//where does apnews keep their articles
 				case 1:
 					allLinks = getDocument().select("a[href*=article]");
