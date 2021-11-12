@@ -24,18 +24,21 @@ import java.awt.*;
 public class ArticleScrape {
 	private String article;
 	private String link;
+	private String title;
 	private String articleText;
 	private Document document;
 	public ArticleScrape() {
 		this.article = "placeholder";
+		this.title = "placeholder";
 		this.link = "placeholder";
 		this.articleText = "placeholder";
+		readyArticle();
 	}
-	/*this method feteches a passage*/
-	public String getText( ){
-		/* This is just here to obtain all of the text from the article
-		 * using whatever scraping library, doesn't get the excerpt yet */
-		/*should add another function for scrapper*/
+	/*This is method fetches the summary of the article*/
+	public String getText(){
+		return this.articleText;
+	}
+	public void setArticleText(Document document){
 		String text = "";
 
 		text = getDocument().select(".Article").select("p").text();
@@ -55,9 +58,7 @@ public class ArticleScrape {
 		}
 		text = sum.toString();
 		this.articleText = text;
-		return this.articleText;
 	}
-	
 	/* For each article or Scrapper should obtain the following:
 	 * 1. Title
 	 * 2. Summary
@@ -69,7 +70,7 @@ public class ArticleScrape {
 		String url1 = "https://apnews.com/"; //a href
 		String url2 = "https://www.nbcnews.com/us-news";
 		String url3 = "https://www.wsj.com/";
-		String url4 = "https://www.reuters.com/breakingviews";
+		String url4 = "https://www.reuters.com/world/";
 		String url5 = "https://www.bbc.com/news";
 		Random rand = new Random();
 		int max = 5;
@@ -78,7 +79,7 @@ public class ArticleScrape {
 		//System.out.println(random);
 		try {
 			/*This chooses the article based on the random number generated*/
-			switch (1){
+			switch (3){
 				case 1: setArticle(url1);
 					break;
 				case 2: setArticle(url2);
@@ -92,7 +93,7 @@ public class ArticleScrape {
 			}
 			setDocument(getArticle());
 			Elements allLinks = null;
-			switch (1){
+			switch (3){
 				//where does apnews keep their articles
 				case 1:
 					allLinks = getDocument().select("a[href*=article]");
@@ -114,23 +115,25 @@ public class ArticleScrape {
 			 //what does this part do??? DOES THIS GET ALL THE LINKS IN THE LANDING PAGE
 			//IF SO WE COULD LOOK AT THE TIME AND CHOOSE THE MOSt recent one :) THEN we can get set the link, find the summary
 			// set the summary and have our final thingy to present
-			for(Element link: allLinks) {
-				String absoluteUrl = link.attr("abs:href"); //DOES THIS GET ALL THE LINKS ON THE LANDING PAGE
-				//Step 1 set link of article
-				setLink(absoluteUrl);
-				setArticle(absoluteUrl);
-				//System.out.println("Absolute URL: " + absoluteUrl);//print out all links obtained
-				break;
+			String absoluteUrl = "";
+
+			for (Element link : allLinks) {
+				//System.out.println("Ypp");
+				absoluteUrl = link.attr("abs:href"); //DOES THIS GET ALL THE LINKS ON THE LANDING PAGE
+				System.out.println("Absolute URL: " + absoluteUrl);//print out all links obtained
+				//break;
+
 			}
-			//Step 2 get title & Summary of article
+			//Step 1 set link of article
+			setLink(absoluteUrl);
+			setArticle(absoluteUrl);
+			//System.out.println("Absolute URL: " + absoluteUrl);//print out all links obtained
+			//Step 2 set document get title & Summary of article
 			setDocument(getArticle());
-			title = getDocument().title();
-			summary = getText();
-			System.out.println(title+"\n"+summary+"\n"+getLink());
-			this.article = title;
-			this.articleText = summary;
-			this.link = getLink();
-			
+			//Step 3 set text & title
+			setTitle(getDocument());
+			setArticleText(getDocument());
+			//Now article is ready :)
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -159,7 +162,14 @@ public class ArticleScrape {
 	public Document getDocument() {
 		return this.document;
 	}
-
+	/*sets article title*/
+	public void setTitle(Document document){
+		this.title = document.title();
+	}
+	/*gets articles title*/
+	public String getTitle(){
+		return this.title;
+	}
 	/*gets link of article*/
 	public String getLink(){
 		return this.link;
@@ -169,9 +179,4 @@ public class ArticleScrape {
 	public void setLink(String link){
 		this.link = link;
 	}
-	
-	public String getArticleText(){
-		return this.articleText;
-	}
-
 }
