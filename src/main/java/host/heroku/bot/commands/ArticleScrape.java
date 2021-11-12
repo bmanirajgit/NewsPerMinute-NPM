@@ -122,6 +122,8 @@ public class ArticleScrape {
 			title = getDocument().title();
 			summary = getText();
 			System.out.println(title+"\n"+summary+"\n"+getLink());
+			this.articleText = summary;
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
