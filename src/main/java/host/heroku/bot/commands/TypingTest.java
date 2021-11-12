@@ -71,7 +71,7 @@ public class TypingTest implements MessageCreateListener {
                             .append("Errors: \n" + errors)
                             .send(input.getChannel());
                 }
-            });
+            }).removeAfter(90, TimeUnit.SECONDS);
         }
     }
     private String input = "";
