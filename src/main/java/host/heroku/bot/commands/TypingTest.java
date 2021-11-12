@@ -38,6 +38,7 @@ public class TypingTest implements MessageCreateListener {
     @Override
     public void onMessageCreate(MessageCreateEvent test) {
         if (test.getMessageContent().equalsIgnoreCase(Main.Prefix + "test")){
+            test.getChannel().sendMessage("Test started");
             new MessageBuilder()
                     .append("Go! Retype this paragraph: \n")
                     .setEmbed(new EmbedBuilder()
