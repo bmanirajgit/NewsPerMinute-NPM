@@ -33,6 +33,9 @@ public class TypingTest implements MessageCreateListener {
     public TypingTest(DiscordApi api){
         this.api = api;
     }
+    public DiscordApi getTTApi(){
+        return this.api;
+    }
     @Override
     public void onMessageCreate(MessageCreateEvent test) {
         if (test.getMessageContent().equalsIgnoreCase(Main.Prefix + "test")){
@@ -45,7 +48,8 @@ public class TypingTest implements MessageCreateListener {
             double start = System.currentTimeMillis();
             MessageAuthor ma = test.getMessageAuthor();
             System.out.println(ma);
-            api.addMessageCreateListener(input -> {
+            DiscordApi testApi = this.getTTApi();
+            testApi.addMessageCreateListener(input -> {
                 if (test.getMessageAuthor().equals(ma)) {
                     String input2 = test.getMessageContent();
                     double stop = System.currentTimeMillis();
