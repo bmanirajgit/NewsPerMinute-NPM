@@ -62,7 +62,7 @@ public class ArticleScrape {
 	public void readyArticle() {
 		String title = "";
 		String summary = "";
-		String url1 = "https://apnews.com/hub/trending-news?utm_source=apnewsnav&utm_medium=featured"; //a href
+		String url1 = "https://apnews.com/"; //a href
 		String url2 = "https://www.nbcnews.com/us-news";
 		String url3 = "https://www.wsj.com/news/us?mod=nav_left_section";
 		String url4 = "https://www.reuters.com/breakingviews";
@@ -95,7 +95,7 @@ public class ArticleScrape {
 					break;
 					//where does nbc news keep their articles
 				case 2:
-
+					allLinks = getDocument().select("a[href*=news/us-news]");
 					break;
 					//where does wsj news lkeep their articles
 				case 3:
