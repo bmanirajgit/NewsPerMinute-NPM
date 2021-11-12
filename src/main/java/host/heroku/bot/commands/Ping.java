@@ -12,10 +12,12 @@ public class Ping implements MessageCreateListener {
 
         if (message.getMessageContent().equalsIgnoreCase(Main.Prefix + "Ping")){
             ArticleScrape scrap = new ArticleScrape();
-            message.getChannel().sendMessage(scrap.getTitle());
-            message.getChannel().sendMessage(scrap.getLink());
-            message.getChannel().sendMessage("Pong Hello4");
-            message.getChannel().sendMessage(scrap.getText());
+            while (scrap.getText() == "placeholder"){
+                message.getChannel().sendMessage(scrap.getTitle());
+                message.getChannel().sendMessage(scrap.getLink());
+                message.getChannel().sendMessage("Pong Hello4");
+                message.getChannel().sendMessage(scrap.getText());
+            }
            scrap = new ArticleScrape();
           
         }
