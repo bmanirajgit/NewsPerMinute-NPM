@@ -1,4 +1,4 @@
-package com.github.gjacobr;
+package host.heroku.bot.commands;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.entity.message.MessageBuilder;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
