@@ -45,6 +45,8 @@ public class ArticleScrape{
 			text = getDocument().select(".wsj-snippet-body").select("p").text();
 		} else if (getLink().contains("bbc")) {
 			text = getDocument().select(".ssrcss-uf6wea-RichTextComponentWrapper").select("p").text();
+		} else if (getLink().contains("therealnews")) {
+			text = getDocument().select(".main-content").select("p").text();
 		} else {
 			text = getDocument().select(".Article").select("p").text();
 		}
@@ -71,13 +73,11 @@ public class ArticleScrape{
 	 * 3. Link to article
 	 **/
 	public void readyArticle() {
-		String title = "";
-		String summary = "";
 		String url1 = "https://apnews.com/"; //a href
 		String url2 = "https://www.nbcnews.com/us-news";
 		String url3 = "https://www.wsj.com/";
 		String url4 = "https://www.bbc.com/news";
-		String url5 = "";
+		String url5 = "https://therealnews.com/";
 		Random rand = new Random();
 		int max = 4;
 		int min = 1;
@@ -116,7 +116,7 @@ public class ArticleScrape{
 					allLinks = getDocument().select("div > a[href*=news/world]");
 					break;
 				case 5:
-
+					allLinks = getDocument().select("h2 > a[href]");
 					break;
 
 			}
