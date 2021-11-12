@@ -43,6 +43,8 @@ public class ArticleScrape{
 
 		if (getLink().contains("wsj")){
 			text = getDocument().select(".wsj-snippet-body").select("p").text();
+		} else if (getLink().contains("bbc")) {
+			text = getDocument().select(".ssrcss-uf6wea-RichTextComponentWrapper").select("p").text();
 		} else {
 			text = getDocument().select(".Article").select("p").text();
 		}
@@ -74,10 +76,10 @@ public class ArticleScrape{
 		String url1 = "https://apnews.com/"; //a href
 		String url2 = "https://www.nbcnews.com/us-news";
 		String url3 = "https://www.wsj.com/";
-		String url4 = "https://www.reuters.com/world/";
-		String url5 = "https://www.bbc.com/news";
+		String url4 = "https://www.bbc.com/news";
+		String url5 = "";
 		Random rand = new Random();
-		int max = 3;
+		int max = 4;
 		int min = 1;
 		int random = rand.nextInt((max-min)+1)+ min;
 		//System.out.println(random);
@@ -110,11 +112,11 @@ public class ArticleScrape{
 					allLinks = getDocument().select("a[href*=news/us-news]");
 					size = allLinks.size();
 					break;
-					//where does wsj news lkeep their articles
 				case 4:
-					allLinks = getDocument().select("a[href*=americas]");
+					allLinks = getDocument().select("div > a[href*=news/world]");
 					break;
 				case 5:
+
 					break;
 
 			}
@@ -165,12 +167,12 @@ public class ArticleScrape{
 	public String getArticle(){
 		return this.article;
 	}
-	
+
 	/*Sets article*/
 	public void setArticle(String article){
 		this.article = article;
 	}
-	
+
 	/*Sets document*/
 	public void setDocument(String article){
 		try {
@@ -179,20 +181,20 @@ public class ArticleScrape{
 			e.printStackTrace();
 		}
 	}
-	
+
 	/*return document*/
 	public Document getDocument() { return this.document; }
-	
+
 	/*sets article title*/
 	public void setTitle(Document document){
 		this.title = document.title();
 	}
-	
+
 	/*gets articles title*/
 	public String getTitle(){
 		return this.title;
 	}
-	
+
 	/*gets link of article*/
 	public String getLink(){
 		return this.link;
