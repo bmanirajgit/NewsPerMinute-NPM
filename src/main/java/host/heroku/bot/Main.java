@@ -22,6 +22,7 @@ public class Main {
         Bot.addListener(new Race());
         Bot.addListener(new TextToGraphics());
         Bot.addListener(new TypingTest(Bot));
+        Bot.addListener(new botTest());
 
 
 
