@@ -24,7 +24,7 @@ public class botTest implements MessageCreateListener {
             new MessageBuilder ()
                     .setEmbed(new EmbedBuilder()
                             .setTitle("NPM Reaction Test")
-                            .setDescription("React with three :thumbsup: to begin")
+                            .setDescription("React with one :thumbsup: in initial comomand to begin")
                             .setColor(Color.BLUE))
                     .send(check.getChannel());
                     id = check.getMessageId();
