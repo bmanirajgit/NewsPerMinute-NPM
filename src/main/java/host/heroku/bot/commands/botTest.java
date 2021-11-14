@@ -41,10 +41,14 @@ public class botTest implements MessageCreateListener {
 
 
         }
+        /*
         while(check.getMessage().getReactions().size() != 1) {
             if (check.getMessage().getReactions().size() == 1) {
                 //set equal to num of players we want
                 List<Reaction> yuh = check.getMessage().getReactions();
+                for (Reaction reaction : yuh){
+
+                }
                 int value = yuh.indexOf(":thumbsup:");
 
                 new MessageBuilder()
@@ -56,6 +60,8 @@ public class botTest implements MessageCreateListener {
 
             }
         }
+        */
+
         //check.getMessage().getReactions();
 
 
