@@ -27,7 +27,8 @@ public class botTest implements MessageCreateListener {
                             .setDescription("React with three :thumbsup: to begin")
                             .setColor(Color.BLUE))
                     .send(check.getChannel());
-            id = check.getMessageId();
+                    id = check.getMessageId();
+
 
             new MessageBuilder()
                     .setEmbed(new EmbedBuilder()
@@ -51,7 +52,7 @@ public class botTest implements MessageCreateListener {
 
 
         List<Reaction> List = new ArrayList<Reaction>();
-        //List<Reaction> people = getReactions();
+        //List<Reaction> people = check.getReactions();
 
     }
 
