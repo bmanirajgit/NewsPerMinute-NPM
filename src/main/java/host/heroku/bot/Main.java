@@ -23,6 +23,7 @@ public class Main {
         Bot.addListener(new TextToGraphics());
         Bot.addListener(new TypingTest(Bot));
         Bot.addListener(new botTest());
+        Bot.addListener(new PChallenge());
 
 
 

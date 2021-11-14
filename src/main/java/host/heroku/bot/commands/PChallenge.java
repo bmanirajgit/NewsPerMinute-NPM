@@ -12,7 +12,7 @@ import java.awt.*;
 
 public class PChallenge implements MessageCreateListener {
     @Override
-    public void onMessageCreate(MessageCreateEvent helpMenu) {
+    public void onMessageCreate(MessageCreateEvent challenge) {
 
         //list Daily of challenges
         String a = "Type at 50 wpm!";
@@ -39,13 +39,13 @@ public class PChallenge implements MessageCreateListener {
         String [] tips = {a, b, c, d, e, f, h, j, k, l, m, o, p, q, s, t, u, v, w, x};
         Random rand = new Random();
         int randomNum = rand.nextInt((20));
-        if (helpMenu.getMessageContent().equalsIgnoreCase(Main.Prefix + "challenge")){
+        if (challenge.getMessageContent().equalsIgnoreCase(Main.Prefix + "challenge")){
 
             new MessageBuilder()
                     .setEmbed(new EmbedBuilder()
                             .setTitle("Challenge!")
                             .setDescription(tips[randomNum])
                             .setColor(Color.BLUE))
-                    .send(helpMenu.getChannel());        }
+                    .send(challenge.getChannel());        }
     }
 }
