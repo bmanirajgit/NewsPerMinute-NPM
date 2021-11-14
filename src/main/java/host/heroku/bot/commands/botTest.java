@@ -14,14 +14,14 @@ import java.util.*;
 
 public class botTest implements MessageCreateListener {
 
-
+    long id;
     @Override
     public void onMessageCreate(MessageCreateEvent check) {
-        long id;
+
         long id2;
         if (check.getMessageContent().equalsIgnoreCase(Main.Prefix + "check")) {
 
-            new MessageBuilder()
+            new MessageBuilder ()
                     .setEmbed(new EmbedBuilder()
                             .setTitle("NPM React Test")
                             .setDescription("React with three :thumbsup: to begin")
@@ -42,10 +42,26 @@ public class botTest implements MessageCreateListener {
 
         }
 
+        if (check.getMessage().getReactions().size() == 1){
+            //set equal to num of players we want
+            List<Reaction> yuh = check.getMessage().getReactions();
+            int value = yuh.indexOf(":thumbsup:");
 
-        List<Reaction> List = new ArrayList<Reaction>();
+            new MessageBuilder()
+                    .setEmbed(new EmbedBuilder()
+                            .setTitle("Who reacted")
+                            .setDescription("at index " + value)
+                            .setColor(Color.BLUE))
+                    .send(check.getChannel());
+
+        }
+        //check.getMessage().getReactions();
+
+
+
+        //List<Reaction> List = new ArrayList<Reaction>();
         //having trouble getting reactions
-        //List<Reaction> people = check.getReactions();
+
 
     }
 
