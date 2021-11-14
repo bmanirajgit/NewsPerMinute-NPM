@@ -33,15 +33,7 @@ public class botTest implements MessageCreateListener {
             new MessageBuilder()
                     .setEmbed(new EmbedBuilder()
                             .setTitle("NPM React Test")
-                            .setDescription("msg2")
-                            .setColor(Color.BLUE))
-                    .send(check.getChannel());
-            id2 = check.getMessageId();
-
-            new MessageBuilder()
-                    .setEmbed(new EmbedBuilder()
-                            .setTitle("NPM React Test")
-                            .setDescription("id1 is " +  Long.toString(id) + " " + Long.toString(id2))
+                            .setDescription("id1 is " +  Long.toString(id))
                             .setColor(Color.BLUE))
                     .send(check.getChannel());
 
