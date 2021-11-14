@@ -44,6 +44,7 @@ public class botTest implements MessageCreateListener {
 
 
         List<Reaction> List = new ArrayList<Reaction>();
+        //having trouble getting reactions
         //List<Reaction> people = check.getReactions();
 
     }
