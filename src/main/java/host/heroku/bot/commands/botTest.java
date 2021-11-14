@@ -23,7 +23,7 @@ public class botTest implements MessageCreateListener {
 
             new MessageBuilder ()
                     .setEmbed(new EmbedBuilder()
-                            .setTitle("NPM React Test")
+                            .setTitle("NPM Reaction Test")
                             .setDescription("React with three :thumbsup: to begin")
                             .setColor(Color.BLUE))
                     .send(check.getChannel());
@@ -41,19 +41,20 @@ public class botTest implements MessageCreateListener {
 
 
         }
+        while(check.getMessage().getReactions().size() != 1) {
+            if (check.getMessage().getReactions().size() == 1) {
+                //set equal to num of players we want
+                List<Reaction> yuh = check.getMessage().getReactions();
+                int value = yuh.indexOf(":thumbsup:");
 
-        if (check.getMessage().getReactions().size() == 1){
-            //set equal to num of players we want
-            List<Reaction> yuh = check.getMessage().getReactions();
-            int value = yuh.indexOf(":thumbsup:");
+                new MessageBuilder()
+                        .setEmbed(new EmbedBuilder()
+                                .setTitle("Who reacted")
+                                .setDescription("at index " + value)
+                                .setColor(Color.BLUE))
+                        .send(check.getChannel());
 
-            new MessageBuilder()
-                    .setEmbed(new EmbedBuilder()
-                            .setTitle("Who reacted")
-                            .setDescription("at index " + value)
-                            .setColor(Color.BLUE))
-                    .send(check.getChannel());
-
+            }
         }
         //check.getMessage().getReactions();
 
