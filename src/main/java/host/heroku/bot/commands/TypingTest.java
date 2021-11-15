@@ -42,21 +42,23 @@ public class TypingTest implements MessageCreateListener {
             ArticleScrape scraper = new ArticleScrape();
             String summary = scraper.getText();
             int sumLength = summary.length();
-            test.getChannel().sendMessage("Test started");
-            new MessageBuilder()
+            boolean done = false;
+            while (!done){
+                test.getChannel().sendMessage("Test started");
+                new MessageBuilder()
                     .append("Go! Retype this paragraph: \n")
                     .setEmbed(new EmbedBuilder()
                             .setDescription(summary)
                             .setColor(Color.BLUE))
                     .send(test.getChannel());
-            double start = System.currentTimeMillis();
-            MessageAuthor ma = test.getMessageAuthor();
-            System.out.println(ma);
-            DiscordApi testApi = this.getTTApi();
-            testApi.addMessageCreateListener(input -> {
-                if (input.getMessageAuthor().equals(ma)) {
-                    String input2 = input.getMessageContent();
-                    double stop = System.currentTimeMillis();
+                double start = System.currentTimeMillis();
+                MessageAuthor ma = test.getMessageAuthor();
+                System.out.println(ma);
+                DiscordApi testApi = this.getTTApi();
+                testApi.addMessageCreateListener(input -> {
+                    if (input.getMessageAuthor().equals(ma)) {
+                        String input2 = input.getMessageContent();
+                        double stop = System.currentTimeMillis();
                     double time = (stop - start) / 1000;
                     double accuracy = CalculateStats.calculateAccuracy(input2, summary);
                     double wpm = CalculateStats.calculateWPM(sumLength, time);
@@ -77,6 +79,8 @@ public class TypingTest implements MessageCreateListener {
            
                 } 
             });
+            done = true;
+          }
         }
     }
     private String input = "";
