@@ -42,16 +42,23 @@ public class botTest implements MessageCreateListener {
 
         }
 
-        /*
+        //this code bricks the entire bot
+        // List<Reaction> yuh = check.getMessage().getReactions(); is used to get list of reactions
+        //here we check if the reaction list is = 1 for testing purposes
+        //runs until "someone" reacts to it
         while(check.getMessage().getReactions().size() != 1) {
+
             if (check.getMessage().getReactions().size() == 1) {
                 //set equal to num of players we want
+
                 List<Reaction> yuh = check.getMessage().getReactions();
                 for (Reaction reaction : yuh){
-
+                    //for loop that I haven't imiplemented yet
                 }
+                //this shows -1 for some reason when I ran it
                 int value = yuh.indexOf(":thumbsup:");
 
+                //this actually worked, but -1 was index and it broke the bot
                 new MessageBuilder()
                         .setEmbed(new EmbedBuilder()
                                 .setTitle("Who reacted")
@@ -60,8 +67,9 @@ public class botTest implements MessageCreateListener {
                         .send(check.getChannel());
 
             }
+
         }
-        */
+
 
         //check.getMessage().getReactions();
 
