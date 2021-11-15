@@ -17,8 +17,11 @@ public class Help implements MessageCreateListener {
             new MessageBuilder()
                     .setEmbed(new EmbedBuilder()
                             .setTitle("NPM commands list")
-                            .setDescription("\n 'npm help' to open the help page"+ "\n 'npm info' for information about the system "
-                                    + "\n 'npm run' to run the typing game")
+                            .setDescription("\n **npm help:** to open the help page" +
+                                    "\n **npm info:** for information about the system " +
+                                    "\n **npm race:** to run the typing game" +
+                                    "\n **npm test:** to run a typing test" +
+                                    "\n **npm challenge:** receive a personal challenge")
                             .setColor(Color.BLUE))
                     .send(helpMenu.getChannel());        }
     }
