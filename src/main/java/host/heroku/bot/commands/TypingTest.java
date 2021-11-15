@@ -38,7 +38,6 @@ public class TypingTest implements MessageCreateListener {
     }
     @Override
     public void onMessageCreate(MessageCreateEvent test) {
-        private boolean testDone = false;
         if (test.getMessageContent().equalsIgnoreCase(Main.Prefix + "test")){
             ArticleScrape scraper = new ArticleScrape();
             String summary = scraper.getText();
@@ -75,8 +74,7 @@ public class TypingTest implements MessageCreateListener {
                     new MessageBuilder()
                             .append("Errors: \n" + errors)
                             .send(input.getChannel());
-                    testDone = true;
-                    if (testDone){exit(0);}
+           
                 }
             });
         }
