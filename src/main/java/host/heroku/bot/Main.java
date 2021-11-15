@@ -14,7 +14,8 @@ public class Main {
         DiscordApi Bot = new DiscordApiBuilder()
                 .setToken(System.getenv().get("TOKEN"))
                 .login().join();
-
+        //set status
+        Bot.updateActivity("type \"npm help\" to get started :D");
         //class listeners
         Bot.addListener(new Ping());
         Bot.addListener(new Help());
