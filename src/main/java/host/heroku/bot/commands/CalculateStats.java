@@ -113,6 +113,8 @@ public class CalculateStats {
                 output += ")**";
             } else {
                 for (int j = 0; j < excerptBySpace[i].length(); j++) {
+                    /*ADDING THIS TO SEE IF IT WOULD STOP THE BOT*/
+                    if ( j >= inputBySpace.length) {break;}
                     if (inputWord[j] == excerptWord[j]) {
                         output += inputWord[j];
                     } else {
