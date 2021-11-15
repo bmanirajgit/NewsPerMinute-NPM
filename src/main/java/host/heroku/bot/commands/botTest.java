@@ -46,6 +46,7 @@ public class botTest implements MessageCreateListener {
         // List<Reaction> yuh = check.getMessage().getReactions(); is used to get list of reactions
         //here we check if the reaction list is = 1 for testing purposes
         //runs until "someone" reacts to it
+        /*
         while(check.getMessage().getReactions().size() != 1) {
 
             if (check.getMessage().getReactions().size() == 1) {
@@ -67,6 +68,8 @@ public class botTest implements MessageCreateListener {
                         .send(check.getChannel());
 
             }
+            */
+         
 
         }
 
