@@ -68,12 +68,12 @@ public class botTest implements MessageCreateListener {
                         .send(check.getChannel());
 
             }
-            */
-         
+
+
 
         }
 
-
+        */
         //check.getMessage().getReactions();
 
 
