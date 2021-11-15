@@ -55,7 +55,7 @@ public class TypingTest implements MessageCreateListener {
             System.out.println(ma);
             DiscordApi testApi = this.getTTApi();
             testApi.addMessageCreateListener(input -> {
-                while (input.getMessageAuthor().equals(ma) && !(testDone)) {
+                if (input.getMessageAuthor().equals(ma)) {
                     String input2 = input.getMessageContent();
                     double stop = System.currentTimeMillis();
                     double time = (stop - start) / 1000;
@@ -76,6 +76,7 @@ public class TypingTest implements MessageCreateListener {
                             .append("Errors: \n" + errors)
                             .send(input.getChannel());
                     testDone = true;
+                    if (testDone){exit(0);}
                 }
             });
         }
