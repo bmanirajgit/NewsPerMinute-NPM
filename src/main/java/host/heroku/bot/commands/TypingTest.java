@@ -38,7 +38,6 @@ public class TypingTest implements MessageCreateListener {
     }
     @Override
     public void onMessageCreate(MessageCreateEvent test) {
-        private boolean done = false; //plz work
         if (test.getMessageContent().equalsIgnoreCase(Main.Prefix + "test")){
             ArticleScrape scraper = new ArticleScrape();
             String summary = scraper.getText();
@@ -55,7 +54,7 @@ public class TypingTest implements MessageCreateListener {
             System.out.println(ma);
             DiscordApi testApi = this.getTTApi();
             testApi.addMessageCreateListener(input -> {
-                if (input.getMessageAuthor().equals(ma) && (done == false)) {
+                if (input.getMessageAuthor().equals(ma)) {
                     String input2 = input.getMessageContent();
                     double stop = System.currentTimeMillis();
                     double time = (stop - start) / 1000;
@@ -77,7 +76,6 @@ public class TypingTest implements MessageCreateListener {
                             .send(input.getChannel());
            
                 } 
-                done = true; //will this fixe it
             });
         }
     }
