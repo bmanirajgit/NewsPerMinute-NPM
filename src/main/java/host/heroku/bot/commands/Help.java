@@ -16,7 +16,7 @@ public class Help implements MessageCreateListener {
 
             new MessageBuilder()
                     .setEmbed(new EmbedBuilder()
-                            .setTitle("NPM commands list")
+                            .setTitle("NPM Help Page")
                             .setDescription("\n **npm help:** to open the help page" +
                                     "\n **npm info:** for information about the system " +
                                     "\n **npm race:** to run the typing game" +

@@ -41,6 +41,7 @@ public class botTest implements MessageCreateListener {
 
 
         }
+
         /*
         while(check.getMessage().getReactions().size() != 1) {
             if (check.getMessage().getReactions().size() == 1) {
