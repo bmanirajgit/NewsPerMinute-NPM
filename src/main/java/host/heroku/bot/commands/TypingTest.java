@@ -20,6 +20,7 @@ import org.javacord.api.util.event.ListenerManager;
 
 import java.awt.*;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
 
 
 public class TypingTest implements MessageCreateListener {
