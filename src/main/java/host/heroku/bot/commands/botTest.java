@@ -35,12 +35,16 @@ public class botTest implements MessageCreateListener {
                             .setTitle("NPM React Test")
                             .setDescription("id1 is " +  Long.toString(id))
                             .setColor(Color.BLUE))
-                    .send(check.getChannel());
+                    .send(check.getChannel())
+                    .thenAccept(message -> message.getReactions().size());
+
 
 
 
 
         }
+
+
 
         //this code bricks the entire bot
         // List<Reaction> yuh = check.getMessage().getReactions(); is used to get list of reactions
