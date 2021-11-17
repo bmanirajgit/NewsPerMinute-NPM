@@ -68,11 +68,10 @@ public class TypingTest implements MessageCreateListener {
                             .append("You sent: \n")
                             .append(input2 + "\n")
                             .setEmbed(new EmbedBuilder()
-                                    .setTitle("Results")
-                                    .addField("Original Article", "Title")
-                                    .addField("Time elapsed", time + " seconds")
-                                    .addField("WPM Score", String.format("%.2f", wpm) + " words per minute")
-                                    .addInlineField("Accuracy", String.format("%.2f", accuracy) + "%")
+                                    .setDescription("The time you took was: " + time + " seconds\n" +
+                                            "Your raw WPM score is: " + wpm + " words per minute.\n" +
+                                            "Your NPM Score is: " + npm + "!\n" +
+                                            "Your paragraph was " + accuracy + "% accurate")
                                     .setColor(Color.green))
 
                             .send(input.getChannel());
@@ -80,8 +79,8 @@ public class TypingTest implements MessageCreateListener {
                             .append("Errors: \n" + errors)
                             .send(input.getChannel());
            
-                } 
-            }).removeAfter(90, TimeUnit.SECONDS);
+                }
+            });
             done = true;
           }
         }
