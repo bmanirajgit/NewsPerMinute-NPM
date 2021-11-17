@@ -90,7 +90,7 @@ public class TypingTest implements MessageCreateListener {
                     putInArr(test.getMessageAuthor().getName() , (int)npm);
            
                 }
-            }).removeAfter(90, TimeUnit.SECONDS);
+            }).removeAfter(20, TimeUnit.SECONDS);
             done = true;
 
 
