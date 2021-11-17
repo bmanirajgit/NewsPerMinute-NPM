@@ -14,7 +14,7 @@ public class Info implements MessageCreateListener {
         if(info.getMessageContent().equalsIgnoreCase(Main.Prefix + "info")) {
             new MessageBuilder()
                     .setEmbed(new EmbedBuilder()
-                            .setDescription("This is bot meant for both fun & learning, " +
+                            .setDescription("Hello! This is bot meant for both fun & learning, " +
                                     "as it will help with both your typing skills and allow you to keep up with current events. " +
                                     "If you wish to know about all of the commands please use the 'npm help' command.")
                             .setColor(Color.BLUE))
