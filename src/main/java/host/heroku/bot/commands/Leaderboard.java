@@ -65,7 +65,7 @@ public class Leaderboard implements MessageCreateListener {
             int sco4 = scores[4];
 
             putInArr("Bharath", 1);
-            putInArr("Jacob", 100);
+            //putInArr("Jacob", 100);
 
             new MessageBuilder()
                     .setEmbed(new EmbedBuilder()
