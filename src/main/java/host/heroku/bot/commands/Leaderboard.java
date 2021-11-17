@@ -51,7 +51,7 @@ public class Leaderboard implements MessageCreateListener {
 
     @Override
     public void onMessageCreate(MessageCreateEvent top) {
-
+        if (top.getMessageContent().equalsIgnoreCase(Main.Prefix + "top")) {
             String pos0 = users[0];
             String pos1 = users[1];
             String pos2 = users[2];
@@ -67,13 +67,14 @@ public class Leaderboard implements MessageCreateListener {
             new MessageBuilder()
                     .setEmbed(new EmbedBuilder()
                             .setTitle("Leaderboard")
-                            .setDescription("\n **1.**" + pos0 + ": "  + sco0 +
+                            .setDescription("\n **1.**" + pos0 + ": " + sco0 +
                                     "\n **2.**" + pos1 + ": " + sco1 +
                                     "\n **3.**" + pos2 + ": " + sco2 +
                                     "\n **4.**" + pos3 + ": " + sco3 +
                                     "\n **5.**" + pos4 + ": " + sco4)
                             .setColor(Color.BLUE))
                     .send(top.getChannel());
+        }
     }
 
 }
