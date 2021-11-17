@@ -70,7 +70,7 @@ public class TypingTest implements MessageCreateListener {
                     double time = (stop - start) / 1000;
                     double accuracy = CalculateStats.calculateAccuracy(input2, summary);
                     double wpm = CalculateStats.calculateWPM(sumLength, time);
-
+                    int npm = CalculateStats.calculateNPM(sumLength, time, input2, summary);
                     String errors = CalculateStats.showErrors(summary, input2);
                     new MessageBuilder()
                             .append("You sent: \n")
