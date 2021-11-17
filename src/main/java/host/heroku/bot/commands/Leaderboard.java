@@ -30,6 +30,7 @@ public class Leaderboard implements MessageCreateListener {
                     tempStr = users[i];
                     scores[i] = score;
                     users[i] = user;
+                    break;
                 }
             }
             if (i != users.length - 1) { //shuffles
