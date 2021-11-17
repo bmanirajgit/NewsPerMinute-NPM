@@ -39,7 +39,7 @@ public class PChallenge implements MessageCreateListener {
         String [] tips = {a, b, c, d, e, f, h, j, k, l, m, o, p, q, s, t, u, v, w, x};
         Random rand = new Random();
         int randomNum = rand.nextInt((20));
-        if (challenge.getMessageContent().equalsIgnoreCase(Main.Prefix + "challenge")){
+        if (challenge.getMessageContent().equalsIgnoreCase(Main.Prefix + "dare")){
 
             new MessageBuilder()
                     .setEmbed(new EmbedBuilder()
