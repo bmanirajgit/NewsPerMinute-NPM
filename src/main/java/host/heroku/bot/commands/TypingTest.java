@@ -48,7 +48,8 @@ public class TypingTest implements MessageCreateListener {
         if (test.getMessageContent().equalsIgnoreCase(Main.Prefix + "test")){
             ArticleScrape scraper = new ArticleScrape();
             String summary = scraper.getText();
-            int sumLength = summary.length();
+            String[] sumBySpace = summary.split(" ");
+            int sumLength = sumBySpace.length;
             boolean done = false;
             while (!done){
                 test.getChannel().sendMessage("Test started");
@@ -79,8 +80,8 @@ public class TypingTest implements MessageCreateListener {
                                     .addField("Original Article", scraper.getTitle() +"\n"+ scraper.getLink())
                                     .addField("Time elapsed", time + " seconds")
                                     .addField("WPM Score", String.format("%.2f", wpm) + " words per minute")
-                                    .addInlineField("Accuracy", String.format("%.2f", accuracy) + "%"))
-
+                                    .addInlineField("NPM Score", npm + "")
+                                    .addField("Accuracy", String.format("%.2f", accuracy) + "%"))
                             .send(input.getChannel());
                     new MessageBuilder()
                             .append("Errors: \n" + errors)
