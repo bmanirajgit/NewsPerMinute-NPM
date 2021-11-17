@@ -52,7 +52,7 @@ public class Leaderboard implements MessageCreateListener {
 
     @Override
     public void onMessageCreate(MessageCreateEvent top) {
-        if (top.getMessageContent().equalsIgnoreCase(Main.Prefix + "top")) {
+        if (top.getMessageContent().equalsIgnoreCase(Main.Prefix + "pot")) {
             String pos0 = users[0];
             String pos1 = users[1];
             String pos2 = users[2];
