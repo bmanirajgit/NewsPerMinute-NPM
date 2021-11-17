@@ -67,12 +67,12 @@ public class Leaderboard implements MessageCreateListener {
             new MessageBuilder()
                     .setEmbed(new EmbedBuilder()
                             .setTitle("Leaderboard")
-                            .setDescription("\n **1.**" + pos0 + ": " + sco0 +
-                                    "\n **2.**" + pos1 + ": " + sco1 +
-                                    "\n **3.**" + pos2 + ": " + sco2 +
-                                    "\n **4.**" + pos3 + ": " + sco3 +
-                                    "\n **5.**" + pos4 + ": " + sco4)
-                            .setColor(Color.BLUE))
+                            .setDescription("\n **1. **" + pos0 + ": " + sco0 +
+                                    "\n **2. **" + pos1 + ": " + sco1 +
+                                    "\n **3. **" + pos2 + ": " + sco2 +
+                                    "\n **4. **" + pos3 + ": " + sco3 +
+                                    "\n **5. **" + pos4 + ": " + sco4)
+                            .setColor(Color.ORANGE))
                     .send(top.getChannel());
         }
     }
