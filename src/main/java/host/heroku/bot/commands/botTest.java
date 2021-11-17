@@ -78,7 +78,7 @@ public class botTest implements MessageCreateListener {
         }
 
         */
-        //check.getMessage().getReactions();
+        //check.getMessage().get;
 
 
 

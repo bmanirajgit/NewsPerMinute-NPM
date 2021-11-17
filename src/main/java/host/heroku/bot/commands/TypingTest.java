@@ -62,6 +62,7 @@ public class TypingTest implements MessageCreateListener {
                     double time = (stop - start) / 1000;
                     double accuracy = CalculateStats.calculateAccuracy(input2, summary);
                     double wpm = CalculateStats.calculateWPM(sumLength, time);
+                    double npm = CalculateStats.calculateNPM(sumLength, time, input2, summary);
                     String errors = CalculateStats.showErrors(summary, input2);
                     new MessageBuilder()
                             .append("You sent: \n")
@@ -69,6 +70,7 @@ public class TypingTest implements MessageCreateListener {
                             .setEmbed(new EmbedBuilder()
                                     .setDescription("The time you took was: " + time + " seconds\n" +
                                             "Your raw WPM score is: " + wpm + " words per minute.\n" +
+                                            "Your NPM Score is: " + npm + "!\n" +
                                             "Your paragraph was " + accuracy + "% accurate")
                                     .setColor(Color.green))
 
