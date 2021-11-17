@@ -70,7 +70,7 @@ public class TypingTest implements MessageCreateListener {
                             .append(input2 + "\n")
                             .setEmbed(new EmbedBuilder()
                                     .setTitle("Results")
-                                    .addField("Original Article", "Title")
+                                    .addField("Original Article", scraper.getTitle() +"\n"+ scraper.getLink())
                                     .addField("Time elapsed", time + " seconds")
                                     .addField("WPM Score", String.format("%.2f", wpm) + " words per minute")
                                     .addInlineField("Accuracy", String.format("%.2f", accuracy) + "%"))
