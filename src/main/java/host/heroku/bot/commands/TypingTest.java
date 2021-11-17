@@ -81,7 +81,8 @@ public class TypingTest implements MessageCreateListener {
                                     .addField("Time elapsed", time + " seconds")
                                     .addField("WPM Score", String.format("%.2f", wpm) + " words per minute")
                                     .addInlineField("NPM Score", String.format("%f", npm))
-                                    .addField("Accuracy", String.format("%.2f", accuracy) + "%"))
+                                    .addField("Accuracy", String.format("%.2f", accuracy) + "%")
+                                    .setColor(Color.PINK))
                             .send(input.getChannel());
                     new MessageBuilder()
                             .append("Errors: \n" + errors)
