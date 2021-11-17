@@ -81,7 +81,7 @@ public class TypingTest implements MessageCreateListener {
                             .send(input.getChannel());
            
                 }
-            }).removeAfter(15, TimeUnit.SECONDS);
+            }).removeAfter(90, TimeUnit.SECONDS);
             done = true;
           }
         }
