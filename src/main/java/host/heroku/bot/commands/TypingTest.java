@@ -80,7 +80,7 @@ public class TypingTest implements MessageCreateListener {
                                     .addField("Original Article", scraper.getTitle() +"\n"+ scraper.getLink())
                                     .addField("Time elapsed", time + " seconds")
                                     .addField("WPM Score", String.format("%.2f", wpm) + " words per minute")
-                                    .addInlineField("NPM Score", npm + "")
+                                    .addInlineField("NPM Score", String.format("%d", npm))
                                     .addField("Accuracy", String.format("%.2f", accuracy) + "%"))
                             .send(input.getChannel());
                     new MessageBuilder()
