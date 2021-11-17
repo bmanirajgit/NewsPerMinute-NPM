@@ -64,10 +64,11 @@ public class Leaderboard implements MessageCreateListener {
             int sco2 = scores[2];
             int sco3 = scores[3];
             int sco4 = scores[4];
-
+            
+            /* test input
             putInArr("Bharath", 1);
             putInArr("Jacob", 100);
-
+            */
 
             new MessageBuilder()
                     .setEmbed(new EmbedBuilder()
