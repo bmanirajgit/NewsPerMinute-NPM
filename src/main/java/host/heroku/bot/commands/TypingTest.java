@@ -70,7 +70,7 @@ public class TypingTest implements MessageCreateListener {
                             .setEmbed(new EmbedBuilder()
                                     .setDescription("The time you took was: " + time + " seconds\n" +
                                             "Your raw WPM score is: " + wpm + " words per minute.\n" +
-                                            "Your NPM Score is: " + sumLength + " " + input2.length() + "!\n" +
+                                            "Your NPM Score is: " + npm + "!\n" +
                                             "Your paragraph was " + accuracy + "% accurate")
                                     .setColor(Color.green))
 

@@ -37,7 +37,7 @@ public class CalculateStats {
     public static int calculateNPM(int wordCount, double time ,String input, String excerpt){
         /* definitely works */
         //avg wpm = 41
-        if(input.length() != excerpt.length()){
+        if((input.length() +1)!= excerpt.length()){
             return 0;
         }
         return  ((int)calculateAccuracy(input, excerpt)) + ((int)((wordCount/(time/60))/41)) * 100;
