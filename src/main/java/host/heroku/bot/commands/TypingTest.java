@@ -18,6 +18,7 @@ import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 import org.javacord.api.util.event.ListenerManager;
 
+import javax.swing.text.AbstractDocument;
 import java.awt.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
@@ -84,8 +85,13 @@ public class TypingTest implements MessageCreateListener {
             }).removeAfter(90, TimeUnit.SECONDS);
             done = true;
           }
+
+
+
         }
     }
+
+
     private String input = "";
     private double timeElapsed = 0.0;
     private boolean isMuted = false;

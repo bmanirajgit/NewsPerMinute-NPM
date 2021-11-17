@@ -20,5 +20,13 @@ public class Info implements MessageCreateListener {
                             .setColor(Color.BLUE))
                     .send(info.getChannel());
         }
+
+        if(info.getMessageContent().equalsIgnoreCase(Main.Prefix + "hello")) {
+            new MessageBuilder()
+                    .setEmbed(new EmbedBuilder()
+                            .setDescription("This works.")
+                            .setColor(Color.BLUE))
+                    .send(info.getChannel());
+        }
     }
 }

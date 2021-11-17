@@ -9,6 +9,7 @@ public class Main {
     //prefix
     public static String Prefix = "npm ";
 
+
     public static void main(String[] args){
 
 
@@ -18,6 +19,8 @@ public class Main {
                 .login().join();
         //set status
         Bot.updateActivity("type \"npm help\" to get started :D");
+
+
 
         //class listeners
         Bot.addListener(new Ping());
