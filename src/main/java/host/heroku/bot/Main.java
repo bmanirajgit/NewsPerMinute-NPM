@@ -8,7 +8,9 @@ public class Main {
 
     //prefix
     public static String Prefix = "npm ";
+
     public static void main(String[] args){
+
 
         //makes out top secret token an environment variable....shhhh
         DiscordApi Bot = new DiscordApiBuilder()
@@ -16,6 +18,7 @@ public class Main {
                 .login().join();
         //set status
         Bot.updateActivity("type \"npm help\" to get started :D");
+
         //class listeners
         Bot.addListener(new Ping());
         Bot.addListener(new Help());
@@ -26,6 +29,7 @@ public class Main {
         Bot.addListener(new botTest());
         Bot.addListener(new PChallenge());
         Bot.addListener(new Leaderboard());
+
 
 
 

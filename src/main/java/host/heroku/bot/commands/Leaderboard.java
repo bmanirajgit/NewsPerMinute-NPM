@@ -37,7 +37,7 @@ public class Leaderboard implements MessageCreateListener {
                     tempStr2 = users[i + 1];
                     tempInt2 = scores[i + 1];
                     users[i + 1] = tempStr;
-                    scores[i + 1] = tempInt2;
+                    scores[i + 1] = tempInt;
                     tempStr = tempStr2;
                     tempInt = tempInt2;
                     i++;
