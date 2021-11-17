@@ -70,7 +70,7 @@ public class TypingTest implements MessageCreateListener {
                     double time = (stop - start) / 1000;
                     double accuracy = CalculateStats.calculateAccuracy(input2, summary);
                     double wpm = CalculateStats.calculateWPM(sumLength, time);
-                    int npm = CalculateStats.calculateNPM(sumLength, time, input2, summary);
+                    double npm = CalculateStats.calculateNPM(sumLength, time, input2, summary);
                     String errors = CalculateStats.showErrors(summary, input2);
                     new MessageBuilder()
                             .append("You sent: \n")
@@ -80,14 +80,14 @@ public class TypingTest implements MessageCreateListener {
                                     .addField("Original Article", scraper.getTitle() +"\n"+ scraper.getLink())
                                     .addField("Time elapsed", time + " seconds")
                                     .addField("WPM Score", String.format("%.2f", wpm) + " words per minute")
-                                    .addInlineField("NPM Score", String.format("%d", npm))
+                                    .addInlineField("NPM Score", String.format("%f", npm))
                                     .addField("Accuracy", String.format("%.2f", accuracy) + "%"))
                             .send(input.getChannel());
                     new MessageBuilder()
                             .append("Errors: \n" + errors)
                             .send(input.getChannel());
 
-                    double npm = CalculateStats.calculateNPM(sumLength, time, input2, summary);
+                    npm = CalculateStats.calculateNPM(sumLength, time, input2, summary);
                     putInArr(test.getMessageAuthor().getName() , (int)npm);
            
                 }
