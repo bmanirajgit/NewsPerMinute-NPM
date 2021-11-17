@@ -20,7 +20,7 @@ public class Help implements MessageCreateListener {
                             .setDescription("\n **npm help:** to open the help page" +
                                     "\n **npm info:** for information about the system " +
                                     "\n **npm test:** to run a typing test" +
-                                    "\n **npm challenge:** receive a personal challenge")
+                                    "\n **npm dare:** receive a personal challenge")
                             .setColor(Color.BLUE))
                     .send(helpMenu.getChannel());        }
     }
