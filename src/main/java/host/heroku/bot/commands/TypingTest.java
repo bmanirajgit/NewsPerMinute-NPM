@@ -84,8 +84,7 @@ public class TypingTest implements MessageCreateListener {
                                     .setColor(Color.PINK))
                             .send(input.getChannel());
                     new MessageBuilder()
-                            .append("Errors: (Original characters in bold)\n" + errors)
-                            .append("\n test sumLength" + sumLength)
+                            .append("Errors: (Fixed characters in bold)\n" + errors)
                             .send(input.getChannel());
 
                     npm = CalculateStats.calculateNPM(sumLength, time, input2, summary);
