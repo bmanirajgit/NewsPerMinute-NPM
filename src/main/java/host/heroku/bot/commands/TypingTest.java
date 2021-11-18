@@ -70,29 +70,27 @@ public class TypingTest implements MessageCreateListener {
                     double time = (stop - start) / 1000;
                     double accuracy = CalculateStats.calculateAccuracy(input2, summary);
                     double wpm = CalculateStats.calculateWPM(sumLength, time);
-                    double npm = CalculateStats.calculateNPM(sumLength, time, input2, summary);
+                    int npm = CalculateStats.calculateNPM(sumLength, time, input2, summary);
                     String errors = CalculateStats.showErrors(summary, input2);
                     new MessageBuilder()
-                            .append("You sent: \n")
-                            .append(input2 + "\n")
                             .setEmbed(new EmbedBuilder()
                                     .setTitle("Results")
                                     .addField("Original Article", scraper.getTitle() +"\n"+ scraper.getLink())
                                     .addField("Time elapsed", time + " seconds")
                                     .addField("WPM Score", String.format("%.2f", wpm) + " words per minute")
-                                    .addInlineField("NPM Score", String.format("%f", npm))
+                                    .addInlineField("NPM Score", String.format("%d", npm))
                                     .addField("Accuracy", String.format("%.2f", accuracy) + "%")
                                     .setColor(Color.PINK))
                             .send(input.getChannel());
                     new MessageBuilder()
-                            .append("Errors: \n" + errors)
+                            .append("Errors: (Original characters in bold)\n" + errors)
                             .send(input.getChannel());
 
                     npm = CalculateStats.calculateNPM(sumLength, time, input2, summary);
                     putInArr(test.getMessageAuthor().getName() , (int)npm);
            
                 }
-            }).removeAfter(20, TimeUnit.SECONDS);
+            }).removeAfter(90, TimeUnit.SECONDS);
             done = true;
 
 
