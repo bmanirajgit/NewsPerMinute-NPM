@@ -49,7 +49,8 @@ public class TypingTest implements MessageCreateListener {
             ArticleScrape scraper = new ArticleScrape();
             String summary = scraper.getText();
             String[] sumBySpace = summary.split(" ");
-            int sumLength = sumBySpace.length;
+            int sumLength = summary.length();
+            int sumWordCount = sumBySpace.length;
             boolean done = false;
             while (!done){
                 test.getChannel().sendMessage("Test started");
@@ -70,7 +71,7 @@ public class TypingTest implements MessageCreateListener {
                     double time = (stop - start) / 1000;
                     double accuracy = CalculateStats.calculateAccuracy(input2, summary);
                     double wpm = CalculateStats.calculateWPM(sumLength, time);
-                    int npm = CalculateStats.calculateNPM(sumLength, time, input2, summary);
+                    int npm = CalculateStats.calculateNPM(sumWordCount, time, input2, summary);
                     String errors = CalculateStats.showErrors(summary, input2);
                     new MessageBuilder()
                             .setEmbed(new EmbedBuilder()
