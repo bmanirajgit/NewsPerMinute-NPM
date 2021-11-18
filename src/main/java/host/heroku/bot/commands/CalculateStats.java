@@ -42,9 +42,9 @@ public class CalculateStats {
         }
         return  ((int)calculateAccuracy(input, excerpt)) + ((int)((wordCount/(time/60))/41)) * 100;
     }
-    public static double calculateWPM(int wordCount, double time){
+    public static double calculateWPM(int charCount, double time){
         /* definitely works */
-        return  wordCount/(time/60);
+        return  (charCount/5)/(time/60);
     }
 
     public static double calculateAccuracy(String input, String excerpt){
