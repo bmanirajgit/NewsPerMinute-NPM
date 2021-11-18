@@ -87,7 +87,7 @@ public class TypingTest implements MessageCreateListener {
                             .append("Errors: (Fixed characters in bold)\n" + errors)
                             .send(input.getChannel());
 
-                    npm = CalculateStats.calculateNPM(sumLength, time, input2, summary);
+                    //npm = CalculateStats.calculateNPM(sumLength, time, input2, summary);
                     putInArr(test.getMessageAuthor().getName() , (int)npm);
            
                 }
