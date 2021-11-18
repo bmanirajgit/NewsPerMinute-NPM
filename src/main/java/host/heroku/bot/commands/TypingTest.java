@@ -214,11 +214,12 @@ public class TypingTest implements MessageCreateListener {
                     tempStr = users[i];
                     scores[i] = score;
                     users[i] = user;
+
                     break;
                 }
             }
             if (i != users.length - 1) { //shuffles
-                while (i < users.length - 1) {
+                while (i < users.length - 1) { //was2
                     tempStr2 = users[i + 1];
                     tempInt2 = scores[i + 1];
                     users[i + 1] = tempStr;
