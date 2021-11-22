@@ -1,0 +1,9 @@
+public class articleScrapeTest {
+	public static ArticleScrape scrape;
+
+	public static void main(String[] args) {
+		scrape = new ArticleScrape();
+		scrape.readyArticle();
+		System.out.println(scrape.getTitle()+"\n"+scrape.getText()+"\n"+scrape.getLink());
+	}
+}
